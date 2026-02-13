@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from "react-router-dom";
+
+import Industries from "./components/Industries";
+import Contact from "./components/Contact";
+import Quality from "./components/Quality";
+import Manufacturing from "./components/Manufacturing";
+import Home from "./pages/Home";
+import MainLayout from "./components/MainLayout";
+import ScrollToTop from "./utils/useScrollTop";
+import About from "./components/About";
+import Products from "./components/ProductPage/Products";
+import NotFountPage from "./pages/NotFountPage";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <ScrollToTop />
+      <Routes>
+        <Route element={<MainLayout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/manufacturing" element={<Manufacturing />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/quality" element={<Quality />} />
+          <Route path="/industries" element={<Industries />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/product" element={<Products />} />
+          <Route path="/*" element={<NotFountPage />} />
+        </Route>
+      </Routes>
+    </>
   );
 }
 

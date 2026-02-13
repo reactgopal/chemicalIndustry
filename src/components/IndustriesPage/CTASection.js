@@ -1,0 +1,43 @@
+import React from "react";
+import { ArrowRight } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
+import bgImage from "../../assets/images/Testing.jpeg";
+const CTASection = () => {
+  const isHomePage = useLocation().pathname === "/";
+
+  return (
+    <section
+      className={`relative bg-fixed bg-center bg-cover py-24`}
+      style={{
+        backgroundImage: `url('${bgImage}')`,
+      }}
+    >
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-black/60"></div>
+
+      {/* Content */}
+      <div className="relative text-center max-w-4xl mx-auto px-6 text-white">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          We will provide the best Chemicals service
+        </h2>
+
+        <p className="mb-8 text-lg leading-relaxed text-gray-200">
+          Water Treatment & Metal processing | Plastic & Rubber Additives |
+          Flavour & Fragrances | Soap & Detergent | Drilling & Mining | Food &
+          Beverages | Paint, Ink & Coating | Chemical Synthesis & Intermediates
+          | Cosmetics | Dyestuff Intermediate | Pharmaceutical Intermediates |
+          Petrochemicals | Agrochemical Intermediate | Rubber Industries
+        </p>
+
+        <Link
+          to={"/contact"}
+          className="px-8 py-4 bg-teal-600 text-white font-bold rounded-full hover:bg-teal-700 transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center gap-2"
+        >
+          Contact Us <ArrowRight size={20} />
+        </Link>
+      </div>
+    </section>
+  );
+};
+
+export default CTASection;
