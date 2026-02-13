@@ -11,10 +11,7 @@ const Capabilities = () => {
   ];
 
   return (
-    <div 
-    
-    id="capabilities"
-    className="container mx-auto mb-24 px-6">
+    <div id="capabilities" className="container mx-auto mb-24 px-6">
       <div className="text-center mb-12">
         <h3 className="text-3xl font-bold text-slate-900 mb-2">
           Our Capabilities

@@ -48,12 +48,12 @@ const Hero = () => {
                 className="group-hover:translate-x-1 transition-transform"
               />
             </Link>
-            <a
-              href="#capabilities"
+            <Link
+              to={"/"}
               className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white border border-white/10 rounded-lg font-semibold backdrop-blur-sm transition-all flex items-center justify-center"
             >
               Our Capabilities
-            </a>
+            </Link>
           </div>
         </motion.div>
       </div>

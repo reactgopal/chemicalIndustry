@@ -2,7 +2,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ShieldCheck, Globe2, Scale, Truck } from "lucide-react";
 
-
 const features = [
   {
     icon: <ShieldCheck className="w-12 h-12 text-teal-500" />,

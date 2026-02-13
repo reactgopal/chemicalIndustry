@@ -5,7 +5,6 @@ import {
   FlaskConical,
   Warehouse,
   Settings,
-  Users,
   Truck,
   Check,
   FileText,
@@ -67,9 +66,7 @@ const Manufacturing = () => {
             <h2 className="text-sm font-bold text-teal-600 uppercase tracking-widest mb-2">
               Our Capabilities
             </h2>
-            <h3 className="text-section">
-              World-Class Infrastructure
-            </h3>
+            <h3 className="text-section">World-Class Infrastructure</h3>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -94,12 +91,8 @@ const Manufacturing = () => {
                   <div className="w-14 h-14 bg-teal-50 rounded-xl flex items-center justify-center text-teal-600 mb-6 -mt-16 relative z-10 shadow-md border border-white">
                     {facility.icon}
                   </div>
-                  <h4 className="text-card mb-3">
-                    {facility.title}
-                  </h4>
-                  <p className="text-body">
-                    {facility.desc}
-                  </p>
+                  <h4 className="text-card mb-3">{facility.title}</h4>
+                  <p className="text-body">{facility.desc}</p>
                 </div>
               </motion.div>
             ))}
@@ -108,9 +101,7 @@ const Manufacturing = () => {
 
         {/* Process Flow */}
         <div className="mb-24">
-          <h3 className="text-section mb-12 text-center">
-            Production Process
-          </h3>
+          <h3 className="text-section mb-12 text-center">Production Process</h3>
           <div className="relative">
             {/* Connector Line */}
             <div className="absolute top-1/2 left-0 w-full h-1 bg-slate-200 -translate-y-1/2 hidden md:block z-0"></div>

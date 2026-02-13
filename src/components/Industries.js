@@ -1,6 +1,5 @@
 import PageHeader from "./PageHeader";
 import IndustryCard from "./IndustriesPage/IndustryCard";
-import ImpactStats from "./IndustriesPage/ImpactStats";
 import CTASection from "./IndustriesPage/CTASection";
 import industriesList from "../utils/industriesDummy";
 import bannerTwoImg from "../assets/images/panner/2.jpeg";
@@ -26,13 +25,8 @@ const Industries = () => {
             />
           ))}
         </div>
-
-        {/* Impact Stats */}
-        {/* <ImpactStats /> */}
-
-        {/* CTA Section */}
       </div>
-        <CTASection />
+      <CTASection />
     </div>
   );
 };

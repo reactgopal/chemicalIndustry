@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { CheckCircle } from "lucide-react";
 
 const IndustryCard = ({ industry, index }) => {
   const isEven = index % 2 === 0;
@@ -64,9 +63,7 @@ const IndustryCard = ({ industry, index }) => {
                 <h4 className="text-blue-900 font-bold text-sm uppercase tracking-wider mb-2 border-b border-blue-100 pb-2 inline-block">
                   Applications
                 </h4>
-                <p className="text-body text-sm">
-                  {industry.applications}
-                </p>
+                <p className="text-body text-sm">{industry.applications}</p>
               </div>
             )}
           </div>

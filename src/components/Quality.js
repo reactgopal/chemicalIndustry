@@ -289,12 +289,12 @@ const Quality = () => {
                       <div className="p-6 pt-0 text-slate-600 text-sm border-t border-slate-100 bg-slate-50/50">
                         {doc.content}
                         <div className="mt-4">
-                          <a
-                            href="#"
+                          <button
+                            type="button"
                             className="text-blue-600 font-semibold text-xs hover:underline"
                           >
                             Download PDF &rarr;
-                          </a>
+                          </button>
                         </div>
                       </div>
                     </motion.div>

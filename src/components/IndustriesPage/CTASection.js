@@ -1,10 +1,8 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import bgImage from "../../assets/images/Testing.jpeg";
 const CTASection = () => {
-  const isHomePage = useLocation().pathname === "/";
-
   return (
     <section
       className={`relative bg-fixed bg-center bg-cover py-24`}

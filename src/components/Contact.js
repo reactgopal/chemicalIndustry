@@ -1,14 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import {
-  Mail,
-  Phone,
-  MapPin,
-  Send,
-  Clock,
-  MessageSquare,
-  Globe,
-} from "lucide-react";
+import { Mail, Phone, MapPin, Send } from "lucide-react";
 import PageHeader from "./PageHeader";
 import bannerThreeImg from "../assets/images/panner/3.jpeg";
 const Contact = () => {
@@ -36,13 +28,7 @@ const Contact = () => {
         "Plot No 145, Shah Industrial Estate -3, Near Kotambi Cricket Stadium, Halol-Vadodara Road.Kotambi-391510",
       ],
       color: "indigo",
-    },
-    // {
-    //   icon: <MessageSquare size={24} />,
-    //   title: "Live Chat",
-    //   details: ["Available Mon-Fri", "9:00 AM - 6:00 PM EST"],
-    //   color: "emerald",
-    // },
+    }, 
   ];
 
   return (
@@ -188,9 +174,7 @@ const Contact = () => {
               {/* Email Icon */}
               <Mail className="mx-auto text-secondary mb-4" size={48} />
 
-              <h3 className="text-xl font-semibold text-primary mb-4">
-                Email
-              </h3>
+              <h3 className="text-xl font-semibold text-primary mb-4">Email</h3>
 
               <div className="space-y-1 text-body">
                 <p>Sales@nilkanthopc.com</p>
@@ -201,37 +185,7 @@ const Contact = () => {
           </motion.div>
         </div>
 
-        {/* Quick Support / FAQ teaser */}
-        {/* <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="bg-blue-600 rounded-xl p-8 text-white relative overflow-hidden group hover:shadow-xl transition-all cursor-pointer">
-            <div className="relative z-10">
-              <h3 className="text-2xl font-bold mb-2">Technical Support</h3>
-              <p className="opacity-90 mb-4">
-                Need TDS/MSDS documents? Access our client portal.
-              </p>
-              <span className="inline-flex items-center font-semibold border-b border-white pb-1 group-hover:translate-x-2 transition-transform">
-                Access Portal &rarr;
-              </span>
-            </div>
-            <div className="absolute -right-5 -bottom-5 text-blue-500/30">
-              <MessageSquare size={120} />
-            </div>
-          </div>
-          <div className="bg-teal-600 rounded-xl p-8 text-white relative overflow-hidden group hover:shadow-xl transition-all cursor-pointer">
-            <div className="relative z-10">
-              <h3 className="text-2xl font-bold mb-2">Global Logistics</h3>
-              <p className="opacity-90 mb-4">
-                Track your shipment or inquire about export regulations.
-              </p>
-              <span className="inline-flex items-center font-semibold border-b border-white pb-1 group-hover:translate-x-2 transition-transform">
-                Track Shipment &rarr;
-              </span>
-            </div>
-            <div className="absolute -right-5 -bottom-5 text-teal-500/30">
-              <Globe size={120} />
-            </div>
-          </div>
-        </div> */}
+         
       </div>
     </div>
   );

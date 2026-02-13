@@ -1,7 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-
 const PageHeader = ({ title, subtitle, bgImage = "hero_background.jpg" }) => {
   return (
     <div className="relative w-full flex items-center justify-center overflow-hidden bg-slate-900">
@@ -25,9 +24,7 @@ const PageHeader = ({ title, subtitle, bgImage = "hero_background.jpg" }) => {
           transition={{ duration: 0.6 }}
           className="max-w-4xl mx-auto"
         >
-          <h1 className="text-display mb-3 sm:mb-4">
-            {title}
-          </h1>
+          <h1 className="text-display mb-3 sm:mb-4">{title}</h1>
           {subtitle && (
             <p className="text-subtitle max-w-2xl mx-auto px-2 sm:px-0">
               {subtitle}

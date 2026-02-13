@@ -1,5 +1,5 @@
 import React from "react";
-import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
+import { Facebook, Twitter, Linkedin } from "lucide-react";
 import { Link } from "react-router-dom";
 import { productCategories } from "../utils/ProductDummy";
 
@@ -40,12 +40,18 @@ const Footer = () => {
             <h4 className="text-card text-white mb-6">Quick Links</h4>
             <ul className="space-y-3 text-sm">
               <li>
-                <Link to="/about" className="hover:text-teal-400 transition-colors">
+                <Link
+                  to="/about"
+                  className="hover:text-teal-400 transition-colors"
+                >
                   About Us
                 </Link>
               </li>
               <li>
-                <Link to="/products" className="hover:text-teal-400 transition-colors">
+                <Link
+                  to="/products"
+                  className="hover:text-teal-400 transition-colors"
+                >
                   Products & Solutions
                 </Link>
               </li>
@@ -55,12 +61,18 @@ const Footer = () => {
                 </Link>
               </li> */}
               <li>
-                <Link to="/manufacturing" className="hover:text-teal-400 transition-colors">
-                 Manufacturing
+                <Link
+                  to="/manufacturing"
+                  className="hover:text-teal-400 transition-colors"
+                >
+                  Manufacturing
                 </Link>
               </li>
               <li>
-                <Link to="/quality" className="hover:text-teal-400 transition-colors">
+                <Link
+                  to="/quality"
+                  className="hover:text-teal-400 transition-colors"
+                >
                   Quality
                 </Link>
               </li>
@@ -73,7 +85,10 @@ const Footer = () => {
             <ul className="space-y-3 text-sm">
               {productCategories.slice(0, 5).map((category, index) => (
                 <li key={index}>
-                  <Link to="/product" className="hover:text-teal-400 transition-colors">
+                  <Link
+                    to="/product"
+                    className="hover:text-teal-400 transition-colors"
+                  >
                     {category.name}
                   </Link>
                 </li>

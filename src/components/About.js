@@ -2,9 +2,7 @@ import React from "react";
 import PageHeader from "./PageHeader";
 import Intro from "./AboutPage/Intro";
 import MissionVisionValues from "./AboutPage/MissionVisionValues";
-import Capabilities from "./AboutPage/Capabilities";
-import Infrastructure from "./AboutPage/Infrastructure";
-import GlobalPresence from "./AboutPage/GlobalPresence";
+import Capabilities from "./AboutPage/Capabilities"; 
 import bannerOneImg from "../assets/images/panner/1.jpeg";
 
 const About = () => {
@@ -19,11 +17,8 @@ const About = () => {
       <div className="container mx-auto px-6 py-20">
         <Intro />
         <MissionVisionValues />
-        <Capabilities />
-        {/* <Infrastructure /> */}
-      </div>
-
-      {/* <GlobalPresence /> */}
+        <Capabilities /> 
+      </div> 
     </div>
   );
 };
