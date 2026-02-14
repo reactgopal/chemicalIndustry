@@ -10,8 +10,7 @@ const MainLayout = () => {
   const [isScrolling, setIsScrolling] = useState(false); // Default to false;
 
   const handleScroll = () => {
-    const scrollY = window.scrollY;
-    const scrollX = window.scrollX;
+    const scrollY = window.scrollY; 
     if (scrollY > 50) {
       setIsScrolling(true);
     } else {
