@@ -12,10 +12,10 @@ const Footer = () => {
           <div>
             <Link to="/" className="flex items-center my-auto mb-4">
               <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-teal-500 rounded-lg flex items-center justify-center text-white font-bold text-xl">
-                N
+                P
               </div>
               <span className="text-2xl font-bold tracking-tight ps-2">
-                Nilkanth<span className="text-teal-500">OPC</span>
+                PARSAN <span className="text-teal-500">AGROCHEM</span>
               </span>
             </Link>
             <p className="text-body text-sm text-slate-400 mb-6">
@@ -116,7 +116,7 @@ const Footer = () => {
         </div>
 
         <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-center items-center text-sm text-slate-500">
-          <p>© 2026 Nilkanth OPC. All rights reserved.</p>
+          <p>© 2026 PARSAN AGROCHEM. All rights reserved.</p>
           {/* <div className="flex space-x-6 mt-4 md:mt-0">
             <Link to="/privacy" className="hover:text-white transition-colors">
               Privacy Policy

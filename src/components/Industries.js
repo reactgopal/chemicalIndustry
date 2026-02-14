@@ -6,6 +6,7 @@ import bannerTwoImg from "../assets/images/panner/2.jpeg";
 
 const Industries = () => {
   const industries = industriesList;
+  console.log(industries);
   return (
     <div className="bg-slate-50 min-h-screen">
       <PageHeader
@@ -17,9 +18,9 @@ const Industries = () => {
       <div className="container mx-auto px-6 py-20">
         {/* Industry Cards Grid */}
         <div className="flex flex-col gap-24 max-w-7xl mx-auto">
-          {industries.map((industry, index) => (
+          {industries?.map((industry, index) => (
             <IndustryCard
-              key={industry.name}
+              key={industry?.name}
               industry={industry}
               index={index}
             />

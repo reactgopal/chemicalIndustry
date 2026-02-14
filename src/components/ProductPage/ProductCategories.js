@@ -13,7 +13,7 @@ const ProductCategories = ({
   };
   const handleScrollToTop = () => {
     window.scrollTo({
-      top: 0,
+      top: 430,
       behavior: "smooth",
     });
   };

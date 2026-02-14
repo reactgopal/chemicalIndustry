@@ -152,7 +152,7 @@ const Contact = () => {
               <MapPin className="mx-auto text-secondary mb-4" size={48} />
 
               <h2 className="text-2xl font-bold text-primary mb-4">
-                NILKANTH OVERSEAS CHEM
+                PARSAN AGROCHEM
               </h2>
 
               <h3 className="font-semibold text-slate-900 mb-2">

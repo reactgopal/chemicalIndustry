@@ -1,28 +1,6 @@
 import { motion } from "framer-motion";
-import {
-  Factory,
-  Droplet,
-  Pickaxe,
-  Pill,
-  Sprout,
-  Flame,
-  UtensilsCrossed,
-  Palette,
-  Sparkles,
-} from "lucide-react";
 import { Link } from "react-router-dom";
-
-const products = [
-  { name: "Plastic & Polymer", icon: Factory },
-  { name: "Water Treatment", icon: Droplet },
-  { name: "Mining & Drilling", icon: Pickaxe },
-  { name: "Pharmaceuticals", icon: Pill },
-  { name: "Agrochemicals", icon: Sprout },
-  { name: "Petrochemicals", icon: Flame },
-  { name: "Food & Beverage", icon: UtensilsCrossed },
-  { name: "Paint & Coating", icon: Palette },
-  { name: "Cosmetics", icon: Sparkles },
-];
+import industries from "../../utils/industriesDummy";
 
 const ProductDisplayCategories = () => {
   return (
@@ -38,46 +16,50 @@ const ProductDisplayCategories = () => {
           </h3>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {products.map((product, index) => {
-            const Icon = product.icon;
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+          {industries.map((industry, index) => {
             return (
-              <Link to={"/industries"}>
+              <Link to={"/industries"} key={index} className="h-full">
                 <motion.div
-                  key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1, duration: 0.5 }}
-                  whileHover={{ y: -8 }}
-                  className="bg-white p-8 rounded-2xl border border-slate-100 shadow-lg hover:shadow-2xl transition-all duration-300 group cursor-pointer relative overflow-hidden"
+                  className="group relative h-60 rounded-2xl overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-300"
                 >
-                  <div className="absolute top-0 right-0 w-24 h-24 bg-teal-50 rounded-bl-full -mr-12 -mt-12 transition-transform group-hover:scale-150 group-hover:bg-teal-100/50"></div>
+                  {/* Background Image */}
+                  <div
+                    className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                    style={{ backgroundImage: `url(${industry.image})` }}
+                  />
 
-                  <div className="relative z-10">
-                    <div className="mb-6 inline-flex items-center justify-center w-16 h-16 rounded-xl bg-slate-50 text-teal-600 group-hover:bg-teal-600 group-hover:text-white transition-colors duration-300 shadow-sm">
-                      <Icon size={32} />
-                    </div>
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
 
-                    <h4 className="text-card mb-3 group-hover:text-teal-700 transition-colors">
-                      {product.name}
+                  {/* Content */}
+                  <div className="absolute inset-0 p-6 flex flex-col justify-end">
+                     
+                    <h4 className="text-white text-xl font-bold mb-2 transform transition-transform duration-300 group-hover:-translate-y-2">
+                      {industry.name}
                     </h4>
 
-                    <div className="flex items-center text-teal-600 font-semibold text-sm opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
-                      <span>Explore Solutions</span>
-                      <svg
-                        className="w-4 h-4 ml-2"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M17 8l4 4m0 0l-4 4m4-4H3"
-                        />
-                      </svg>
+                    <div className="overflow-hidden h-0 group-hover:h-8 transition-all duration-300">
+                      <div className="flex items-center text-teal-300 font-semibold text-sm transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">
+                        <span>Explore Solutions</span>
+                        <svg
+                          className="w-4 h-4 ml-2"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M17 8l4 4m0 0l-4 4m4-4H3"
+                          />
+                        </svg>
+                      </div>
                     </div>
                   </div>
                 </motion.div>
@@ -91,7 +73,7 @@ const ProductDisplayCategories = () => {
             to="/industries"
             className="px-8 py-4 bg-teal-600 text-white font-bold rounded-full hover:bg-teal-700 transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center gap-2"
           >
-            View Full Product Catalog
+            Explore All Industries
           </Link>
         </div>
       </div>

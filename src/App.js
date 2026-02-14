@@ -10,6 +10,7 @@ import ScrollToTop from "./utils/useScrollTop";
 import About from "./components/About";
 import Products from "./components/ProductPage/Products";
 import NotFountPage from "./pages/NotFountPage";
+import ProductListOld from "./components/ProductPage/ProductListOld";
 
 function App() {
   return (
@@ -23,7 +24,8 @@ function App() {
           <Route path="/quality" element={<Quality />} />
           <Route path="/industries" element={<Industries />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/product" element={<Products />} />
+          <Route path="/product-list" element={<ProductListOld />} />
+          <Route path="/products" element={<Products />} />
           <Route path="/*" element={<NotFountPage />} />
         </Route>
       </Routes>

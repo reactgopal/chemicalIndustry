@@ -12,9 +12,6 @@ const MainLayout = () => {
   const handleScroll = () => {
     const scrollY = window.scrollY;
     const scrollX = window.scrollX;
-    console.log(
-      `Vertical position: ${scrollY}, Horizontal position: ${scrollX}`,
-    );
     if (scrollY > 50) {
       setIsScrolling(true);
     } else {

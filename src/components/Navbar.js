@@ -28,7 +28,7 @@ const Navbar = () => {
     // Let's update navLinks to reflect the new structure.
     { name: "Home", path: "/", isScroll: false },
     { name: "About us", path: "/about", isScroll: false },
-    { name: "Product", path: "/product", isScroll: false },
+    { name: "Product", path: "/products", isScroll: false },
     // { name: "Manufacturing", path: "/manufacturing", isScroll: false },
     // { name: "Quality", path: "/quality", isScroll: false },
     { name: "Industries", path: "/industries", isScroll: false },
@@ -47,12 +47,12 @@ const Navbar = () => {
         {/* Logo */}
         <Link to="/" className="flex items-center space-x-2">
           <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-teal-500 rounded-lg flex items-center justify-center text-white font-bold text-xl">
-            N
+            P
           </div>
           <span
             className={`text-2xl font-bold tracking-tight ${scrolled || !isHome ? "text-slate-900" : "text-white"}`}
           >
-            Nilkanth<span className="text-teal-500">OPC</span>
+            PARSAN <span className="text-teal-500">AGROCHEM</span>
           </span>
         </Link>
 

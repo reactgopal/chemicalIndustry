@@ -1,175 +1,107 @@
-import React, { useState, useMemo } from "react";
-import { productCategories } from "../../utils/ProductDummy";
-import ProductCategories from "./ProductCategories";
-import ProductBody from "./ProductBody";
-import { Search, Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
+import { Check } from "lucide-react";
+import PageHeader from "../PageHeader";
+import introImg from "../../assets/images/intro.avif";
+import industriesList from "../../utils/industriesDummy";
 
 const Products = () => {
-  const [selectedCategory, setSelectedCategory] = useState("All");
-  const [searchQuery, setSearchQuery] = useState("");
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
-  const filteredData = useMemo(() => {
-    let data = productCategories;
-
-    // Filter by Category
-    if (selectedCategory !== "All") {
-      data = data.filter((cat) => cat.name === selectedCategory);
-    }
-
-    // Since ProductBody expects a list of products, we need to flatten if "All" or just get the products of the single category?
-    // If "All", we might want to show all products grouped or just a flat list.
-    // The design usually implies clicking a category filters the view.
-    // Let's create a flat list of products with their category info for searching.
-    // OR we pass the relevant PROCUCTS list to ProductBody.
-
-    return data;
-  }, [selectedCategory]);
-
-  // Derive the list of products to display
-  const displayedProducts = useMemo(() => {
-    let products = [];
-
-    // Aggregate products based on filtered categories
-    filteredData.forEach((cat) => {
-      products = [
-        ...products,
-        ...cat.products.map((p) => ({ ...p, categoryName: cat.name })),
-      ];
-    });
-
-    // Filter by Search Query
-    if (searchQuery) {
-      const query = searchQuery.toLowerCase();
-      products = products.filter(
-        (p) =>
-          p.name.toLowerCase().includes(query) ||
-          p.uses.toLowerCase().includes(query) ||
-          p.description.toLowerCase().includes(query),
-      );
-    }
-
-    return products;
-  }, [filteredData, searchQuery]);
-
-  // Find current category object for title/description in Body
-  const currentCategoryObj =
-    selectedCategory === "All"
-      ? null
-      : productCategories.find((c) => c.name === selectedCategory);
-
-  const handleSelectCategory = (category) => {
-    setSelectedCategory(category);
-    setIsSidebarOpen(false);
-  };
+  const industries = industriesList;
 
   return (
-    <div className="min-h-screen bg-slate-50">
-      {/* Header Section */}
-      <div className="bg-slate-900 text-white py-20 px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="container mx-auto text-center max-w-3xl"
-        >
-          <h1 className="text-display mb-6">Our Products</h1>
-          <p className="text-subtitle text-blue-100 mb-10">
-            Comprehensive range of industrial and specialty chemicals for
-            diverse applications. Explore our catalog tailored for Global
-            Industries.
-          </p>
+    <div className="bg-slate-50 min-h-screen">
+      <PageHeader
+        title="Our Products"
+        subtitle="Comprehensive range of industrial and specialty chemicals for diverse applications."
+        bgImage={introImg}
+      />
 
-          {/* Search Bar */}
-          <div className="relative max-w-xl mx-auto">
-            <Search
-              className="absolute left-4 top-1/2 -translate-y-1/2 text-white/60"
-              size={20}
-            />
-            <input
-              type="text"
-              placeholder="Search products by name, application, or category..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-12 pr-4 py-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl text-white placeholder-white/60 focus:outline-none focus:bg-white/20 transition-all shadow-lg"
-            />
+      <div className="container mx-auto px-6 py-20">
+        {/* Facilities Grid */}
+        <div className="mb-24">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {industries?.map((facility, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.2, duration: 0.6 }}
+                className="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-100 group"
+              >
+                <div className="h-48 overflow-hidden relative">
+                  <img
+                    src={facility?.image}
+                    alt={facility?.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-slate-900/30 group-hover:bg-slate-900/10 transition-colors"></div>
+                </div>
+                <div className="p-8">
+                  <div className="w-14 h-14 bg-teal-50 rounded-xl flex items-center justify-center text-teal-600 mb-6 -mt-16 relative z-10 shadow-md border border-white">
+                    {facility?.icon}
+                  </div>
+                  <h4 className="text-card mb-3">{facility?.name}</h4>
+                  {/* <p className="text-body">{facility?.description}</p> */}
+                  {/* chemical list map */}
+                  <div className="mt-6">
+                    {/* <h5 className="text-sm font-bold text-teal-600 uppercase tracking-widest mb-2">
+                      Chemicals
+                    </h5> */}
+                    {/* <ul className="flex flex-wrap gap-2">
+                      {facility?.chemicals.map((chemical, index) => (
+                        <li
+                          key={index}
+                          className="flex items-center gap-2 text-body"
+                        >
+                          <Check size={16} />
+                          {chemical}
+                        </li>
+                      ))}
+                    </ul> */}
+
+                    {facility.chemicals &&
+                    typeof facility.chemicals[0] === "object" ? (
+                      <div className="space-y-4">
+                        {facility.chemicals.map((subcategory, index) => (
+                          <div key={index}>
+                            <h5 className="text-teal-700 font-semibold text-sm mb-2">
+                              {subcategory.name}
+                            </h5>
+                            <div className="flex flex-wrap gap-2">
+                              {subcategory.items.map((item, i) => (
+                                <span
+                                  key={i}
+                                  className="bg-slate-100 text-slate-700 text-xs px-2 py-1 rounded-md border border-slate-200"
+                                >
+                                  {item}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-3">
+                        {facility.chemicals?.map((item, i) => (
+                          <div
+                            key={i}
+                            className="flex items-start gap-2.5 group/item"
+                          >
+                            <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-amber-400 group-hover/item:bg-blue-600 transition-colors"></span>
+                            <span className="text-slate-700 text-sm font-medium group-hover/item:text-blue-700 transition-colors">
+                              {item}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
           </div>
-        </motion.div>
-      </div>
-
-      {/* Main Content Layout */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-        className="container mx-auto px-6 py-16"
-      >
-        {/* Mobile Filter Button */}
-        <button
-          className="lg:hidden w-full mb-8 flex items-center justify-between px-6 py-4 bg-white rounded-xl shadow-md border border-slate-100 text-slate-900 font-bold"
-          onClick={() => setIsSidebarOpen(true)}
-        >
-          <span>Browse Categories</span>
-          <Menu className="text-teal-500" size={24} />
-        </button>
-
-        <div className="relative flex flex-col lg:flex-row gap-12 items-start">
-          {/* Sidebar Overlay */}
-          {isSidebarOpen && (
-            <div
-              className="fixed inset-0 bg-black/50 z-40 lg:hidden backdrop-blur-sm"
-              onClick={() => setIsSidebarOpen(false)}
-            />
-          )}
-
-          {/* Sidebar */}
-          <aside
-            className={`
-            fixed inset-y-0 left-0 z-50 w-full max-w-xs bg-white shadow-2xl transform transition-transform duration-300 ease-in-out lg:translate-x-0 lg:sticky lg:top-24 lg:w-1/4 lg:bg-transparent lg:shadow-none lg:z-auto
-            ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"}
-          `}
-          >
-            <div className="h-full overflow-y-auto lg:overflow-visible p-6 lg:p-0">
-              <div className="flex justify-between items-center mb-6 lg:hidden">
-                <h3 className="text-xl font-bold text-slate-900">Categories</h3>
-                <button
-                  onClick={() => setIsSidebarOpen(false)}
-                  className="p-2 hover:bg-slate-100 rounded-full transition-colors"
-                >
-                  <X size={24} className="text-slate-500" />
-                </button>
-              </div>
-              <ProductCategories
-                categories={productCategories}
-                selectedCategory={selectedCategory}
-                onSelectCategory={handleSelectCategory}
-              />
-            </div>
-          </aside>
-
-          {/* Product List */}
-          <main className="w-full lg:w-3/4">
-            <ProductBody
-              category={currentCategoryObj}
-              products={displayedProducts}
-            />
-            {displayedProducts.length === 0 && (
-              <div className="text-center py-20 bg-white rounded-2xl border border-slate-100 border-dashed">
-                <p className="text-slate-500 text-lg">
-                  No products found matching your search.
-                </p>
-                <button
-                  onClick={() => setSearchQuery("")}
-                  className="mt-4 text-blue-600 font-bold hover:underline"
-                >
-                  Clear Search
-                </button>
-              </div>
-            )}
-          </main>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 };

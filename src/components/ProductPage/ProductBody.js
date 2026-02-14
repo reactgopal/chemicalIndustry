@@ -41,13 +41,7 @@ const ProductBody = ({ category, products }) => {
                   <div>
                     <h3 className="text-card mb-1 group-hover:text-blue-600 transition-colors">
                       {product.name}
-                    </h3>
-                    {/* Optional: Add CAS/Grade if available in data, mostly not in dummy data yet except name implies */}
-                    <div className="flex gap-2">
-                      <span className="text-xs font-semibold px-2 py-1 bg-green-50 text-green-700 rounded-full border border-green-100">
-                        Industrial Grade
-                      </span>
-                    </div>
+                    </h3> 
                   </div>
                   <button className="flex items-center gap-2 text-sm font-semibold text-slate-500 hover:text-blue-900 bg-slate-50 hover:bg-slate-100 px-4 py-2 rounded-lg transition-colors border border-slate-200">
                     <Download size={16} /> Datasheet

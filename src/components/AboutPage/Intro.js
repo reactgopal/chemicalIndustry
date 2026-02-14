@@ -23,7 +23,7 @@ const Intro = () => {
       >
         <h2 className="text-section mb-6">Company Overview</h2>
         <p className="text-body mb-6">
-          Nilkanth Overseas Chem started from the year of 2023 in India’s
+          PARSAN AGROCHEM started from the year of 2023 in India’s
           chemical hub “ GUJARAT “ , We have positioned ourselves as the leading
           Exporter & Importer - suppliers and stockiest of Industrial ,
           Specialty and Bulk Chemicals , Pharma Intermediates, Agro

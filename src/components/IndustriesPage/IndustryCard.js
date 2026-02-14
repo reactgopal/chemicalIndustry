@@ -51,7 +51,7 @@ const IndustryCard = ({ industry, index }) => {
                   <div key={i} className="flex items-start gap-2.5 group/item">
                     <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-amber-400 group-hover/item:bg-blue-600 transition-colors"></span>
                     <span className="text-slate-700 text-sm font-medium group-hover/item:text-blue-700 transition-colors">
-                      {item}
+                      {item.name}
                     </span>
                   </div>
                 ))}
