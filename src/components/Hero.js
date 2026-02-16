@@ -39,7 +39,7 @@ const Hero = () => {
 
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
-              to={"/product"}
+              to={"/products"}
               className="px-8 py-4 bg-teal-600 hover:bg-teal-700 text-white rounded-lg font-semibold transition-all shadow-lg shadow-teal-900/20 flex items-center justify-center gap-2 group"
             >
               Explore Products
@@ -49,7 +49,7 @@ const Hero = () => {
               />
             </Link>
             <Link
-              to={"/"}
+              to={"/about"}
               className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white border border-white/10 rounded-lg font-semibold backdrop-blur-sm transition-all flex items-center justify-center"
             >
               Our Capabilities
