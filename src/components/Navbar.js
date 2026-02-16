@@ -50,7 +50,7 @@ const Navbar = () => {
             P
           </div>
           <span
-            className={`text-2xl font-bold tracking-tight ${scrolled || !isHome ? "text-slate-900" : "text-white"}`}
+            className={`text-base font-bold tracking-tight ${scrolled || !isHome ? "text-slate-900" : "text-white"}`}
           >
             PARSAN <span className="text-teal-500">AGROCHEM</span>
           </span>

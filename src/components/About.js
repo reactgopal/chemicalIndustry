@@ -9,7 +9,7 @@ const About = () => {
   return (
     <div className="bg-slate-50 min-h-screen">
       <PageHeader
-        title="About ChemCore"
+        title="About Parsan Agrochem"
         subtitle="Bridging the gap between scientific innovation and industrial application since 2005."
         bgImage={bannerOneImg}
       />
