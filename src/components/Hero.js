@@ -34,7 +34,7 @@ const Hero = () => {
           <p className="text-subtitle mb-10 max-w-2xl">
             Delivering high-purity industrial chemicals and custom formulations
             to power industries worldwide. Innovation meets reliability at
-            Chemcraft Global.
+            PARSAN AGROCHEM.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
