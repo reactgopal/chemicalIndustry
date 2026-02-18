@@ -3,6 +3,7 @@ import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
+import logo from "../assets/images/logo.png"; // added logo import
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -46,11 +47,14 @@ const Navbar = () => {
       <div className="container mx-auto px-6 flex justify-between items-center">
         {/* Logo */}
         <Link to="/" className="flex items-center space-x-2">
-          <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-teal-500 rounded-lg flex items-center justify-center text-white font-bold text-xl">
-            P
-          </div>
+          {/* logo image */}
+          <img
+            src={logo}
+            alt="Parsan Agrochem"
+            className="w-10 h-10 object-contain"
+          />
           <span
-            className={`text-base font-bold tracking-tight ${scrolled || !isHome ? "text-slate-900" : "text-white"}`}
+            className={`text-xl mt-[6px] font-bold tracking-tight ${scrolled || !isHome ? "text-slate-900" : "text-white"}`}
           >
             PARSAN <span className="text-teal-500">AGROCHEM</span>
           </span>

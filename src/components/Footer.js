@@ -2,6 +2,7 @@ import React from "react";
 import { Facebook, Twitter, Linkedin } from "lucide-react";
 import { Link } from "react-router-dom";
 import { productCategories } from "../utils/ProductDummy";
+import logo from "../assets/images/logo.png"; // added logo import
 
 const Footer = () => {
   return (
@@ -10,11 +11,13 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div>
-            <Link to="/" className="flex items-center my-auto mb-4">
-              <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-teal-500 rounded-lg flex items-center justify-center text-white font-bold text-xl">
-                P
-              </div>
-              <span className="text-2xl font-bold tracking-tight ps-2">
+            <Link to="/" className="flex items-center space-x-2 mb-4">
+              <img
+                src={logo}
+                alt="Parsan Agrochem"
+                className="w-10 h-10 object-contain"
+              />
+              <span className="text-2xl font-bold tracking-tight leading-none mt-[6px]">
                 PARSAN <span className="text-teal-500">AGROCHEM</span>
               </span>
             </Link>
