@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { CheckCircle } from "lucide-react";
-import IntroImg from "../../assets/images/intro.avif";
+import introImg1 from "../../assets/images/panner/4.jpeg";
 const Intro = () => {
   const list = [
     "Client-Centric Approach",
@@ -23,11 +23,11 @@ const Intro = () => {
       >
         <h2 className="text-section mb-6">Company Overview</h2>
         <p className="text-body mb-6">
-          PARSAN AGROCHEM started from the year of 2023 in India’s
-          chemical hub “ GUJARAT “ , We have positioned ourselves as the leading
-          Exporter & Importer - suppliers and stockiest of Industrial ,
-          Specialty and Bulk Chemicals , Pharma Intermediates, Agro
-          Intermediates and Dyes Intermediates, Cosmetics .
+          PARSAN AGROCHEM started from the year of 2003 in India’s chemical hub
+          “ GUJARAT “ , We have positioned ourselves as the leading Exporter &
+          Importer - suppliers and stockiest of Industrial , Specialty and Bulk
+          Chemicals , Pharma Intermediates, Agro Intermediates and Dyes
+          Intermediates, Cosmetics .
         </p>
         <p className="text-body mb-6">
           Gujarat is also home to numerous all-weather ports namely Kandla,
@@ -53,9 +53,9 @@ const Intro = () => {
         transition={{ duration: 0.8 }}
         className="lg:w-1/2"
       >
-        <div className="rounded-2xl overflow-hidden shadow-2xl">
+        <div className="rounded-2xl overflow-hidden shadow-xl">
           <img
-            src={IntroImg}
+            src={introImg1}
             loading="lazy"
             decoding="async"
             width="800"

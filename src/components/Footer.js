@@ -55,11 +55,14 @@ const Footer = () => {
                   Products & Solutions
                 </Link>
               </li>
-              {/* <li>
-                <Link to="/sustainability" className="hover:text-teal-400 transition-colors">
-                  Sustainability
+              <li>
+                <Link
+                  to="/industries"
+                  className="hover:text-teal-400 transition-colors"
+                >
+                  Industries
                 </Link>
-              </li> */}
+              </li>
               <li>
                 <Link
                   to="/manufacturing"
@@ -86,7 +89,7 @@ const Footer = () => {
               {productCategories.slice(0, 5).map((category, index) => (
                 <li key={index}>
                   <Link
-                    to="/product"
+                    to="/products"
                     className="hover:text-teal-400 transition-colors"
                   >
                     {category.name}
