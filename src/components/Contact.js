@@ -1,23 +1,36 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, MapPin, Send } from "lucide-react";
+import { Send, Loader2 } from "lucide-react";
 import PageHeader from "./PageHeader";
 import bannerThreeImg from "../assets/images/panner/3.jpeg";
+import { contactInfo } from "../utils/contactInfoDummy";
+import emailjs from "@emailjs/browser";
+
 const Contact = () => {
-  const contactInfo = [
-    {
-      icon: <Mail size={24} />,
-      title: "Email Us",
-      details: ["info@parsanagrochem.com"],
-      color: "teal",
-    },
-    {
-      icon: <MapPin size={24} />,
-      title: "Location",
-      details: [" Gujarat, India"],
-      color: "indigo",
-    },
-  ];
+  const form = useRef();
+
+  const [isLoading, setIsLoading] = useState(false);
+  const serviceID = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+  const templateID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+  const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+
+    emailjs.sendForm(serviceID, templateID, form.current, publicKey).then(
+      (result) => {
+        alert("Email Sent Successfully ✅");
+        setIsLoading(false);
+        e.target.reset();
+      },
+      (error) => {
+        console.error("EmailJS Error:", error);
+        alert("Failed to send email ❌ Please try again later.");
+        setIsLoading(false);
+      },
+    );
+  };
 
   return (
     <div className="bg-slate-50 min-h-screen">
@@ -62,7 +75,7 @@ const Contact = () => {
             className="lg:w-full bg-white rounded-2xl shadow-xl p-8 border border-slate-100"
           >
             <h2 className="text-section mb-6">Send us a Message</h2>
-            <form className="space-y-6">
+            <form ref={form} onSubmit={sendEmail} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="group">
                   <label className="block text-sm font-semibold text-slate-700 mb-2">
@@ -70,6 +83,8 @@ const Contact = () => {
                   </label>
                   <input
                     type="text"
+                    name="user_name"
+                    required
                     className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-secondary focus:ring-2 focus:ring-secondary/20 outline-none transition-all placeholder:text-slate-400"
                     placeholder="John Doe"
                   />
@@ -80,6 +95,8 @@ const Contact = () => {
                   </label>
                   <input
                     type="email"
+                    name="user_email"
+                    required
                     className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-secondary focus:ring-2 focus:ring-secondary/20 outline-none transition-all placeholder:text-slate-400"
                     placeholder="john@company.com"
                   />
@@ -93,6 +110,7 @@ const Contact = () => {
                   </label>
                   <input
                     type="text"
+                    name="company_name"
                     className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-secondary focus:ring-2 focus:ring-secondary/20 outline-none transition-all placeholder:text-slate-400"
                     placeholder="Company Ltd"
                   />
@@ -101,7 +119,10 @@ const Contact = () => {
                   <label className="block text-sm font-semibold text-slate-700 mb-2">
                     Subject
                   </label>
-                  <select className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-secondary focus:ring-2 focus:ring-secondary/20 outline-none transition-all bg-white text-slate-600">
+                  <select
+                    name="subject"
+                    className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-secondary focus:ring-2 focus:ring-secondary/20 outline-none transition-all bg-white text-slate-600"
+                  >
                     <option>Product Inquiry</option>
                     <option>Custom Formulation</option>
                     <option>Partnership Proposal</option>
@@ -116,14 +137,30 @@ const Contact = () => {
                   Message
                 </label>
                 <textarea
+                  name="message"
+                  required
                   rows="5"
                   className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-secondary focus:ring-2 focus:ring-secondary/20 outline-none transition-all placeholder:text-slate-400"
                   placeholder="Tell us about your project requirements..."
                 ></textarea>
               </div>
 
-              <button className="w-full py-4 bg-gradient-to-r from-primary to-secondary text-white font-bold rounded-lg hover:shadow-lg hover:to-primary transition-all flex items-center justify-center gap-2 transform active:scale-95">
-                Send Message <Send size={20} />
+              <button
+                type="submit"
+                disabled={isLoading}
+                className={`w-full py-4 bg-gradient-to-r from-primary to-secondary text-white font-bold rounded-lg hover:shadow-lg hover:to-primary transition-all flex items-center justify-center gap-2 transform active:scale-95 ${
+                  isLoading ? "opacity-70 cursor-not-allowed" : ""
+                }`}
+              >
+                {isLoading ? (
+                  <>
+                    Sending... <Loader2 className="animate-spin" size={20} />
+                  </>
+                ) : (
+                  <>
+                    Send Message <Send size={20} />
+                  </>
+                )}
               </button>
             </form>
           </motion.div>
