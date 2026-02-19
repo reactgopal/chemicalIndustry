@@ -6,19 +6,9 @@ import bannerThreeImg from "../assets/images/panner/3.jpeg";
 const Contact = () => {
   const contactInfo = [
     {
-      icon: <Phone size={24} />,
-      title: "Phone Support",
-      details: ["(+91) 9510967354"],
-      color: "blue",
-    },
-    {
       icon: <Mail size={24} />,
       title: "Email Us",
-      details: [
-        "sales@nilkanthopc.com",
-        "info@nilkanthopc.com",
-        "marketing@nilkanthopc.com",
-      ],
+      details: ["info@parsanagrochem.com"],
       color: "teal",
     },
     {
@@ -28,7 +18,7 @@ const Contact = () => {
         "Plot No 145, Shah Industrial Estate -3, Near Kotambi Cricket Stadium, Halol-Vadodara Road.Kotambi-391510",
       ],
       color: "indigo",
-    }, 
+    },
   ];
 
   return (
@@ -41,7 +31,7 @@ const Contact = () => {
 
       <div className="container mx-auto px-6 py-20">
         {/* Contact Info Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mb-16">
           {contactInfo.map((item, index) => (
             <motion.div
               key={index}
@@ -177,15 +167,11 @@ const Contact = () => {
               <h3 className="text-xl font-semibold text-primary mb-4">Email</h3>
 
               <div className="space-y-1 text-body">
-                <p>Sales@nilkanthopc.com</p>
-                <p>info@nilkanthopc.com</p>
-                <p>marketing@nilkanthopc.com</p>
+                <p>info@parsanagrochem.com</p>
               </div>
             </div>
           </motion.div>
         </div>
-
-         
       </div>
     </div>
   );
