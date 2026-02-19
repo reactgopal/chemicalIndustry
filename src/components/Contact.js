@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, MapPin, Send } from "lucide-react";
 import PageHeader from "./PageHeader";
 import bannerThreeImg from "../assets/images/panner/3.jpeg";
 const Contact = () => {
