@@ -13,10 +13,8 @@ const Contact = () => {
     },
     {
       icon: <MapPin size={24} />,
-      title: "Headquarters",
-      details: [
-        "Plot No 145, Shah Industrial Estate -3, Near Kotambi Cricket Stadium, Halol-Vadodara Road.Kotambi-391510",
-      ],
+      title: "Location",
+      details: [" Gujarat, India"],
       color: "indigo",
     },
   ];
@@ -61,7 +59,7 @@ const Contact = () => {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
-            className="lg:w-2/3 bg-white rounded-2xl shadow-xl p-8 border border-slate-100"
+            className="lg:w-full bg-white rounded-2xl shadow-xl p-8 border border-slate-100"
           >
             <h2 className="text-section mb-6">Send us a Message</h2>
             <form className="space-y-6">
@@ -128,48 +126,6 @@ const Contact = () => {
                 Send Message <Send size={20} />
               </button>
             </form>
-          </motion.div>
-
-          {/* Map & Hours */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            className="lg:w-1/3 space-y-8"
-          >
-            <div className="bg-white p-10 rounded-2xl shadow-lg border border-slate-100 text-center h-full">
-              {/* Location Icon */}
-              <MapPin className="mx-auto text-secondary mb-4" size={48} />
-
-              <h2 className="text-2xl font-bold text-primary mb-4">
-                PARSAN AGROCHEM
-              </h2>
-
-              <h3 className="font-semibold text-slate-900 mb-2">
-                Corporate Address
-              </h3>
-              <p className="text-body mb-6">
-                Plot No 145, Shah Industrial Estate -3, Near Kotambi Cricket
-                Stadium, Halol-Vadodara Road.Kotambi-391510
-              </p>
-
-              <h3 className="font-semibold text-slate-900 mb-2">
-                Registered Address
-              </h3>
-              <p className="text-body mb-8">
-                A4/14A Shreeji Green BS Shreeji Highview Vadodara, Gujarat
-                390019
-              </p>
-
-              {/* Email Icon */}
-              <Mail className="mx-auto text-secondary mb-4" size={48} />
-
-              <h3 className="text-xl font-semibold text-primary mb-4">Email</h3>
-
-              <div className="space-y-1 text-body">
-                <p>info@parsanagrochem.com</p>
-              </div>
-            </div>
           </motion.div>
         </div>
       </div>
