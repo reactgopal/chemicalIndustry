@@ -5,7 +5,7 @@ import PageHeader from "./PageHeader";
 import bannerThreeImg from "../assets/images/panner/3.jpeg";
 import { contactInfo } from "../utils/contactInfoDummy";
 import emailjs from "@emailjs/browser";
-
+import axios from "axios";
 const Contact = () => {
   const form = useRef();
 
@@ -14,22 +14,36 @@ const Contact = () => {
   const templateID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
   const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
 
-  const sendEmail = (e) => {
+  // call inquiry api
+
+  const sendEmail = async (e) => {
     e.preventDefault();
     setIsLoading(true);
 
-    emailjs.sendForm(serviceID, templateID, form.current, publicKey).then(
-      (result) => {
-        alert("Email Sent Successfully ✅");
-        setIsLoading(false);
-        e.target.reset();
-      },
-      (error) => {
-        console.error("EmailJS Error:", error);
-        alert("Failed to send email ❌ Please try again later.");
-        setIsLoading(false);
-      },
-    );
+    try {
+      // 🟢 1️⃣ Get Form Data
+      const formData = new FormData(form.current);
+      const data = Object.fromEntries(formData.entries());
+
+      console.log(data, "data ");
+
+      // 🟢 2️⃣ Call Inquiry API (Backend)
+      await axios.post(
+        "http://192.168.100.11:8009/api/inquiry", // 👈 change this
+        data,
+      );
+
+      // 🟢 3️⃣ Send Email (Existing EmailJS)
+      await emailjs.sendForm(serviceID, templateID, form.current, publicKey);
+
+      alert("Inquiry Sent Successfully ✅");
+      e.target.reset();
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Failed to send inquiry ❌");
+    }
+
+    setIsLoading(false);
   };
 
   return (
@@ -83,7 +97,7 @@ const Contact = () => {
                   </label>
                   <input
                     type="text"
-                    name="user_name"
+                    name="name"
                     required
                     className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-secondary focus:ring-2 focus:ring-secondary/20 outline-none transition-all placeholder:text-slate-400"
                     placeholder="John Doe"
@@ -95,7 +109,7 @@ const Contact = () => {
                   </label>
                   <input
                     type="email"
-                    name="user_email"
+                    name="email"
                     required
                     className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-secondary focus:ring-2 focus:ring-secondary/20 outline-none transition-all placeholder:text-slate-400"
                     placeholder="john@company.com"
