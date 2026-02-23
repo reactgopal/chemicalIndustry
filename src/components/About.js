@@ -10,7 +10,7 @@ const About = () => {
     <div className="bg-slate-50 min-h-screen">
       <PageHeader
         title="About Parsan Agrochem"
-        subtitle="Bridging the gap between scientific innovation and industrial application since 2005."
+        subtitle="Bridging the gap between scientific innovation and industrial application since 2003."
         bgImage={bannerOneImg}
       />
 
