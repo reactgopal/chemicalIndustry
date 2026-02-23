@@ -38,7 +38,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full h-14 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 w-full h-16 z-50 transition-all duration-300 ${
         scrolled || !isHome
           ? "bg-white/90 backdrop-blur-md shadow-lg py-3"
           : "bg-transparent py-5"
@@ -54,7 +54,7 @@ const Navbar = () => {
             className="w-10 h-10 object-contain"
           />
           <span
-            className={`text-xl mt-[6px] font-bold tracking-tight ${scrolled || !isHome ? "text-slate-900" : "text-white"}`}
+            className={`text-base md:text-xl mt-[6px] font-bold tracking-tight ${scrolled || !isHome ? "text-slate-900" : "text-white"}`}
           >
             PARSAN <span className="text-teal-500">AGROCHEM</span>
           </span>

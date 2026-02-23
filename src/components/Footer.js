@@ -1,7 +1,7 @@
 import React from "react";
 import { Facebook, Twitter, Linkedin } from "lucide-react";
 import { Link } from "react-router-dom";
-import { productCategories } from "../utils/ProductDummy";
+import industriesList from "../utils/industriesDummy";
 import logo from "../assets/images/logo.png"; // added logo import
 
 const Footer = () => {
@@ -89,7 +89,7 @@ const Footer = () => {
           <div>
             <h4 className="text-card text-white mb-6">Products</h4>
             <ul className="space-y-3 text-sm">
-              {productCategories.slice(0, 5).map((category, index) => (
+              {industriesList?.slice(0, 5).map((category, index) => (
                 <li key={index}>
                   <Link
                     to="/products"

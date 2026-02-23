@@ -44,9 +44,8 @@ const Features = () => {
             Why Choose Us
           </h2>
           <h3 className="text-section mb-4">
-            The{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500">
-              Chemcraft Advantage
+              The Best Advantage
             </span>
           </h3>
           <p className="text-subtitle text-slate-400 max-w-2xl mx-auto">
@@ -62,8 +61,7 @@ const Features = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.5 }}
-              whileHover={{ y: -5 }}
+              transition={{ delay: index * 0.1, duration: 0.5 }} 
               className="bg-white/5 backdrop-blur-sm p-8 rounded-xl border border-white/10 hover:bg-white/10 transition-colors"
             >
               <div className="mb-6 p-3 bg-slate-800 rounded-lg inline-block">

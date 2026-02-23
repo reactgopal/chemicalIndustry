@@ -2,6 +2,8 @@ import React from "react";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import bgImage from "../../assets/images/Testing.jpeg";
+import industriesList from "../../utils/industriesDummy";
+
 const CTASection = () => {
   return (
     <section
@@ -18,13 +20,8 @@ const CTASection = () => {
         <h2 className="text-3xl md:text-4xl font-bold mb-6">
           We will provide the best Chemicals service
         </h2>
-
         <p className="mb-8 text-lg leading-relaxed text-gray-200">
-          Water Treatment & Metal processing | Plastic & Rubber Additives |
-          Flavour & Fragrances | Soap & Detergent | Drilling & Mining | Food &
-          Beverages | Paint, Ink & Coating | Chemical Synthesis & Intermediates
-          | Cosmetics | Dyestuff Intermediate | Pharmaceutical Intermediates |
-          Petrochemicals | Agrochemical Intermediate | Rubber Industries
+          {industriesList?.map((category) => category.name).join(" | ")}
         </p>
 
         <Link

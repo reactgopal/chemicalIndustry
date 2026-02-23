@@ -19,13 +19,13 @@ function App() {
       <Routes>
         <Route element={<MainLayout />}>
           <Route path="/" element={<Home />} />
-          <Route path="/manufacturing" element={<Manufacturing />} />
           <Route path="/about" element={<About />} />
-          <Route path="/quality" element={<Quality />} />
-          <Route path="/industries" element={<Industries />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/product-list" element={<ProductListOld />} />
           <Route path="/products" element={<Products />} />
+          <Route path="/industries" element={<Industries />} />
+          <Route path="/manufacturing" element={<Manufacturing />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/quality" element={<Quality />} />
+          <Route path="/product-list" element={<ProductListOld />} />
           <Route path="/*" element={<NotFountPage />} />
         </Route>
       </Routes>

@@ -2,7 +2,7 @@ import {
   Droplet,
   Sprout,
   Hammer,
-  Activity, 
+  Activity,
   Settings,
   Factory,
   Pill,
@@ -237,8 +237,7 @@ const industries = [
         ],
       },
     ],
-    applications:
-      "Textile dyes, pigments, food coloring, and printing inks.",
+    applications: "Textile dyes, pigments, food coloring, and printing inks.",
     icon: <Palette className="w-8 h-8 text-purple-600" />,
   },
   {
@@ -285,12 +284,7 @@ const industries = [
     chemicals: [
       {
         name: "Products",
-        items: [
-          "2-Ethylhexyl Nitrate",
-          "Bio Diesel",
-          "Cyclohexane",
-          "NMA",
-        ],
+        items: ["2-Ethylhexyl Nitrate", "Bio Diesel", "Cyclohexane", "NMA"],
       },
     ],
     applications:
@@ -419,4 +413,3 @@ const industries = [
   },
 ];
 export default industries;
-

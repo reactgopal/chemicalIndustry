@@ -10,7 +10,7 @@ const Intro = () => {
     "24/7 Service",
     "Fast, efficient solutions with unwavering quality",
     "Effortless customization for solutions perfectly tailored to your needs",
-    "Crafting innovative chemical solutions for a more refined and sustainable world ",
+    "Crafting innovative chemical solutions for a more refined and sustainable world",
   ];
   return (
     <div className="flex flex-col lg:flex-row items-center gap-16 mb-24">
@@ -23,19 +23,20 @@ const Intro = () => {
       >
         <h2 className="text-section mb-6">Company Overview</h2>
         <p className="text-body mb-6">
-          PARSAN AGROCHEM started from the year of 2003 in India’s chemical hub
-          “ GUJARAT “ , We have positioned ourselves as the leading Exporter &
-          Importer - suppliers and stockiest of Industrial , Specialty and Bulk
-          Chemicals , Pharma Intermediates, Agro Intermediates and Dyes
-          Intermediates, Cosmetics .
+          PARSAN AGROCHEM was established in 2003 in India’s chemical hub,
+          Gujarat. We have positioned ourselves as a leading exporter, importer,
+          supplier, and stockist of industrial, specialty, and bulk chemicals,
+          pharma intermediates, agro intermediates, dye intermediates, and
+          cosmetic chemicals.
         </p>
+
         <p className="text-body mb-6">
-          Gujarat is also home to numerous all-weather ports namely Kandla,
-          Mundra and Hazira , Nhava Sheva which handle a major chunk of national
-          cargo .We provide these products in diverse specifications to attain
-          the complete satisfaction of the clients. Today, with significant
-          industry experience the firm has evolved horizontally & vertically to
-          become manufacturer & distributor,
+          Gujarat is home to major all-weather ports such as Kandla, Mundra,
+          Hazira, and Nhava Sheva, which handle a significant share of the
+          nation’s cargo. We provide our products in diverse specifications to
+          ensure complete customer satisfaction. With significant industry
+          experience, the firm has evolved both horizontally and vertically to
+          become a trusted manufacturer and distributor.
         </p>
         <ul className="space-y-4 mt-8">
           {list.map((item, index) => (

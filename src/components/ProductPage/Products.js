@@ -1,4 +1,4 @@
-import { motion } from "framer-motion"; 
+import { motion } from "framer-motion";
 import PageHeader from "../PageHeader";
 import introImg from "../../assets/images/intro.avif";
 import industriesList from "../../utils/industriesDummy";

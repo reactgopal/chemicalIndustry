@@ -38,7 +38,6 @@ const ProductDisplayCategories = () => {
 
                   {/* Content */}
                   <div className="absolute inset-0 p-6 flex flex-col justify-end">
-                     
                     <h4 className="text-white text-xl font-bold mb-2 transform transition-transform duration-300 group-hover:-translate-y-2">
                       {industry.name}
                     </h4>
