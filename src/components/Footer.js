@@ -1,5 +1,3 @@
-import React from "react";
-import { Facebook, Twitter, Linkedin } from "lucide-react";
 import { Link } from "react-router-dom";
 import industriesList from "../utils/industriesDummy";
 import logo from "../assets/images/logo.png"; // added logo import
