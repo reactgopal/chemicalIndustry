@@ -25,17 +25,6 @@ const Footer = () => {
               Global leader in industrial chemical manufacturing and
               distribution.
             </p>
-            <div className="flex space-x-4">
-              <button className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-teal-500 hover:text-white transition-all">
-                <Linkedin size={20} />
-              </button>
-              <button className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-teal-500 hover:text-white transition-all">
-                <Twitter size={20} />
-              </button>
-              <button className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-teal-500 hover:text-white transition-all">
-                <Facebook size={20} />
-              </button>
-            </div>
           </div>
 
           {/* Quick Links */}
@@ -104,36 +93,23 @@ const Footer = () => {
 
           {/* Newsletter */}
           <div>
-            <h4 className="text-card text-white mb-6">Newsletter</h4>
+            <h4 className="text-card text-white mb-6">Stay Connected</h4>
             <p className="text-body text-sm text-slate-400 mb-4">
-              Subscribe to receive industry insights and company updates.
+              Get updates on new chemical solutions, industry trends, and
+              regulatory developments.
             </p>
-            <form className="flex">
-              <input
-                type="email"
-                placeholder="Your email"
-                className="w-full px-4 py-2 rounded-l-lg bg-slate-800 border-none outline-none text-white focus:ring-1 focus:ring-teal-500"
-              />
-              <button className="bg-teal-600 px-4 py-2 rounded-r-lg hover:bg-teal-700 transition-colors text-white font-bold">
-                Go
-              </button>
-            </form>
+
+            <Link
+              to="/contact"
+              className="px-5 py-2 bg-teal-600 text-white font-bold rounded-full hover:bg-teal-700 transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center gap-2"
+            >
+              Contact
+            </Link>
           </div>
         </div>
 
         <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-center items-center text-sm text-slate-500">
           <p>© 2026 PARSAN AGROCHEM. All rights reserved.</p>
-          {/* <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link to="/privacy" className="hover:text-white transition-colors">
-              Privacy Policy
-            </Link>
-            <Link to="/terms" className="hover:text-white transition-colors">
-              Terms of Service
-            </Link>
-            <Link to="/cookies" className="hover:text-white transition-colors">
-              Cookie Policy
-            </Link>
-          </div> */}
         </div>
       </div>
     </footer>
