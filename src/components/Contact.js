@@ -5,7 +5,7 @@ import PageHeader from "./PageHeader";
 import bannerThreeImg from "../assets/images/panner/3.jpeg";
 import { contactInfo } from "../utils/contactInfoDummy";
 import emailjs from "@emailjs/browser";
-import axios from "axios";
+import { toast } from "react-toastify";
 const Contact = () => {
   const form = useRef();
 
@@ -21,26 +21,15 @@ const Contact = () => {
     setIsLoading(true);
 
     try {
-      // 🟢 1️⃣ Get Form Data
-      const formData = new FormData(form.current);
-      const data = Object.fromEntries(formData.entries());
-
-      console.log(data, "data ");
-
-      // 🟢 2️⃣ Call Inquiry API (Backend)
-      await axios.post(
-        "http://192.168.100.11:8009/api/inquiry", // 👈 change this
-        data,
-      );
-
       // 🟢 3️⃣ Send Email (Existing EmailJS)
       await emailjs.sendForm(serviceID, templateID, form.current, publicKey);
 
-      alert("Inquiry Sent Successfully ✅");
+      // alert("Inquiry Sent Successfully ✅");
+      toast.success("Inquiry Sent Successfully");
       e.target.reset();
     } catch (error) {
       console.error("Error:", error);
-      alert("Failed to send inquiry ❌");
+      toast.error("Failed to send inquiry");
     }
 
     setIsLoading(false);

@@ -40,11 +40,11 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 w-full h-16 z-50 transition-all duration-300 ${
         scrolled || !isHome
-          ? "bg-white/90 backdrop-blur-md shadow-lg py-3"
-          : "bg-transparent py-5"
+          ? "bg-white/90 backdrop-blur-md shadow-lg"
+          : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-6 flex justify-between items-center">
+      <div className="container mx-auto px-6 h-full flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center space-x-2">
           {/* logo image */}
@@ -54,7 +54,9 @@ const Navbar = () => {
             className="w-10 h-10 object-contain"
           />
           <span
-            className={`text-base md:text-xl mt-[6px] font-bold tracking-tight ${scrolled || !isHome ? "text-slate-900" : "text-white"}`}
+            className={`text-base md:text-2xl font-bold tracking-tight mt-1  md:mt-2 ${
+              scrolled || !isHome ? "text-slate-900" : "text-white"
+            }`}
           >
             PARSAN <span className="text-teal-500">AGROCHEM</span>
           </span>
@@ -79,12 +81,11 @@ const Navbar = () => {
             to="/contact"
             className={`px-8 py-2 text-sm font-bold rounded-full transition-all duration-300 
 shadow-lg hover:shadow-xl inline-flex items-center gap-2 transform hover:-translate-y-0.5
-
-${
-  scrolled || !isHome
-    ? "bg-teal-600 text-white hover:bg-teal-700"
-    : "bg-white text-teal-700 hover:bg-teal-50"
-}`}
+            ${
+              scrolled || !isHome
+                ? "bg-teal-600 text-white hover:bg-teal-700"
+                : "bg-white text-teal-700 hover:bg-teal-50"
+            }`}
           >
             Get a Quote
           </Link>

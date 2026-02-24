@@ -11,7 +11,8 @@ import About from "./components/About";
 import Products from "./components/ProductPage/Products";
 import NotFountPage from "./pages/NotFountPage";
 import ProductListOld from "./components/ProductPage/ProductListOld";
-
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function App() {
   return (
     <>
@@ -29,6 +30,17 @@ function App() {
           <Route path="/*" element={<NotFountPage />} />
         </Route>
       </Routes>
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={true}
+        newestOnTop
+        closeOnClick
+        pauseOnHover
+        draggable
+        theme="light"
+        toastClassName="custom-toast"
+      />
     </>
   );
 }

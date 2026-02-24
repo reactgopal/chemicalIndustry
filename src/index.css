@@ -22,20 +22,71 @@ html {
   .text-display {
     @apply text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white;
   }
-  
+
   .text-section {
     @apply text-3xl md:text-4xl font-bold text-slate-900 leading-tight;
   }
-  
+
   .text-card {
     @apply text-xl font-bold text-slate-900;
   }
-  
+
   .text-subtitle {
     @apply text-lg md:text-xl text-slate-300 leading-relaxed;
   }
-  
+
   .text-body {
     @apply text-base text-slate-600 leading-relaxed;
   }
+}
+/* Main Toast Box */
+.custom-toast {
+  font-family: "Inter" !important;
+  background: #e6f7ec !important; /* light green background */
+  color: #1e7e34 !important; /* dark green text */
+  border-radius: 12px !important;
+  padding: 12px 16px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+  font-weight: 500;
+  min-height: auto !important;
+}
+
+/* Success Icon */
+.Toastify__toast-icon svg {
+  fill: #22c55e !important; /* green icon */
+}
+
+/* Close Button */
+.Toastify__close-button {
+  color: #1e7e34 !important;
+  opacity: 0.7;
+}
+
+.Toastify__close-button:hover {
+  opacity: 1;
+}
+
+/* Container Position */
+.Toastify__toast-container--top-right {
+  top: 20px !important;
+  right: 20px !important;
+}
+/* Error Toast */
+.Toastify__toast--error {
+  background: #fee2e2 !important; /* light red */
+  color: #991b1b !important; /* dark red text */
+  border-radius: 12px !important;
+  padding: 12px 16px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+  font-weight: 500;
+}
+
+/* Error Icon */
+.Toastify__toast--error .Toastify__toast-icon svg {
+  fill: #ef4444 !important;
+}
+
+/* Close Button */
+.Toastify__toast--error .Toastify__close-button {
+  color: #991b1b !important;
 }
